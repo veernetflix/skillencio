@@ -18,6 +18,29 @@
   flex-wrap: wrap;
   margin: 0px -15px;
 }
+.grid{
+  display: grid;
+}
+.grid-gap-30{
+  gap: 30px;
+}
+.grid-cols-3{
+  grid-template-columns: repeat(3, 1fr);
+}
+.section-counter{
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.section-counter .counter {
+  text-align:center;
+}
+.section-counter .counter h2{
+  font-size: 42px;
+  font-weight: 600;
+}
+.section-counter .counter p{
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 600;
+}
 .column{
   padding: 0px 15px;
 }
