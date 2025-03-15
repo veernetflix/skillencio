@@ -1790,6 +1790,19 @@ summary::-webkit-details-marker {
 .close svg{
   display: block;
 }
+.next-TCS-NQT-exam-2{
+  position: relative;
+  align-self: stretch;
+  font-family: "DM Sans", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 28px;
+  font-size: 24px;
+  color: #0051f9 !important;
+  margin-top: 10px;
+}
 
 @media (max-width: 1440px){
   .macbook-pro .what-s-included-in br{
@@ -1808,6 +1821,9 @@ summary::-webkit-details-marker {
   .macbook-pro .text-wrapper-34{
     font-size: 52px;
   }
+  .next-TCS-NQT-exam-2{
+    font-size: 22px;
+  }
 }
 @media (max-width: 1366px){
   .footer-navbar ul{
@@ -1815,6 +1831,9 @@ summary::-webkit-details-marker {
   }
   .macbook-pro .hero-section{
     min-height: 750px;
+  }
+  .next-TCS-NQT-exam-2{
+    font-size: 20px;
   }
 }
 @media (max-width: 1170px){
@@ -1973,6 +1992,9 @@ summary::-webkit-details-marker {
   .header-row{
     min-height: 70px;
   }
+  .next-TCS-NQT-exam-2{
+    font-size: 18px;
+  }
 
 }
 @media (max-width: 575px) {
@@ -2120,6 +2142,9 @@ summary::-webkit-details-marker {
 .macbook-pro .text-wrapper-7{
   font-size: 16px;
 
+}
+.next-TCS-NQT-exam-2{
+  font-size: 16px;
 }
 }
 @media (max-width: 420px) {
