@@ -1996,7 +1996,7 @@ summary::-webkit-details-marker {
   .macbook-pro .frame-14, .macbook-pro .frame-wrapper, .macbook-pro .frame-3{
     padding: 40px 30px;
   }
-  .macbook-pro .text-wrapper-3, .macbook-pro .text-wrapper-8, .macbook-pro .what-s-included-in, .macbook-pro .text-wrapper-22, .macbook-pro .text-wrapper-14, .macbook-pro .text-wrapper-18, .macbook-pro .text-wrapper-20, .macbook-pro .text-wrapper-28, .macbook-pro .text-wrapper-34{
+  .hero-section-headings .free-TCS-NQT,.macbook-pro .text-wrapper-3, .macbook-pro .text-wrapper-8, .macbook-pro .what-s-included-in, .macbook-pro .text-wrapper-22, .macbook-pro .text-wrapper-14, .macbook-pro .text-wrapper-18, .macbook-pro .text-wrapper-20, .macbook-pro .text-wrapper-28, .macbook-pro .text-wrapper-34{
     font-size: 28px;
   }
   .macbook-pro .text-wrapper-4, .macbook-pro .text-wrapper-5, .macbook-pro .text-wrapper-6, .macbook-pro .next-TCS-NQT-exam, .macbook-pro .div-3, .macbook-pro .text-wrapper-10, .macbook-pro .text-wrapper-11, .macbook-pro .skillencio-s-full, .macbook-pro .text-wrapper-13, .macbook-pro .text-wrapper-16{
@@ -2103,6 +2103,24 @@ summary::-webkit-details-marker {
 .section-counter .counter h2{
   font-size: 42px;
 }
+.hero-section .hero-section-content{
+  gap: 30px;
+}
+.hero-section-headings{
+  gap: 20px;
+}
+.hero-section-content .frame-2{
+  gap: 20px;
+}
+.macbook-pro .frame-8{
+  min-width: 150px;
+  min-height: 50px;
+  padding: 5px 20px;
+}
+.macbook-pro .text-wrapper-7{
+  font-size: 16px;
+
+}
 }
 @media (max-width: 420px) {
   .macbook-pro .text-wrapper-29{
@@ -2135,6 +2153,9 @@ summary::-webkit-details-marker {
   .macbook-pro .frame-21, .macbook-pro .frame-22, .macbook-pro .frame-24{
     padding: 20px;
     padding-top: 25px;
+  }
+  .macbook-pro .frame-9{
+    gap: 20px;
   }
 }
 
