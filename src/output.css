@@ -2,6 +2,9 @@
   background-color: #ffffff;
   width: 100%;
 }
+.landing-page .content{
+  padding-top: 132px;
+}
 
 .landing-page .div {
   background-color: #ffffff;
@@ -10,12 +13,7 @@
 }
 
 .landing-page .ecosystem {
-  display: flex;
-  flex-direction: column;
   width: 100%;
-  height: 908px;
-  align-items: flex-start;
-  gap: 10px;
   padding: 100px 150px;
   background-color: #0051f9;
 }
@@ -860,7 +858,7 @@
   width: 100%;
   align-items: flex-start;
   gap: 10px;
-  padding: 90px 100px;
+  padding: 90px 60px 90px 100px;
 }
 .pt-0{
   padding-top:  0px !important;
@@ -1222,7 +1220,7 @@
 .landing-page .bridge {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 1920px;
+  width: 100%;
   padding: 120px 150px 0px;
 }
 
@@ -1406,7 +1404,7 @@
 .landing-page .hero {
   display: flex;
   flex-direction: column;
-  width: 1920px;
+  width: 100%;
   height: 686px;
   align-items: flex-end;
   gap: 10px;
@@ -1416,7 +1414,7 @@
 
 .landing-page .frame-53 {
   position: absolute;
-  width: 1920px;
+  width: 100%;
   height: 686px;
   top: 0;
   left: 0;
@@ -1577,20 +1575,27 @@
 .landing-page .header {
   display: flex;
   flex-direction: column;
-  width: 1920px;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 20px 0px 0px;
-/*   position: absolute;
+  width: 100%;
+  gap: 15px;
+  padding: 15px 0px 0px;
+  position: fixed;
   top: 0;
-  left: 0; */
-  background-color: transparent;
+  left: 0;
+  z-index: 99999;
+  background-color: #ffffff;
   border-top-style: none;
   border-right-style: none;
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-left-style: none;
   border-color: #00000026;
+}
+
+.landing-page .header.sticky-header {
+    top: 0px;
+    --header-background: #ffffff;
+    --menu-color: #000000;
+    --logo-color: #0051F9;
 }
 
 .landing-page .frame-57 {
@@ -1608,7 +1613,10 @@
   position: relative;
   width: 224px;
   height: 50px;
+  transition: width 0.25s ease;
 }
+
+
 
 .landing-page .frame-58 {
   display: inline-flex;
@@ -1744,29 +1752,26 @@ body {
 }
 
 .landing-page {
-  max-width: 1920px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-}
 
-.header-top {
+.landing-page .header .header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
   width: 100%;
   padding: 0px 150px;
 }
 
-.logo {
+.landing-page .header .logo {
   width: 224px;
-  height: 50px;
+  height: auto;
+  transition: width 0.25s ease;
+}
+.landing-page .header.sticky-header .logo{
+  width: 175px;
 }
 
 .contact-info {
@@ -1788,6 +1793,7 @@ body {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   width: 100%;
   padding:  0 150px;
+  margin-bottom: -1px;
 }
 
 .main-nav ul {
@@ -1801,17 +1807,21 @@ body {
 }
 
 
-.main-nav a {
+.main-nav ul li a {
   display: inline-flex;
   color: #000000;
   text-decoration: none;
   font-weight: 600;
   font-size: 18px;
-  padding: 15px 10px;
+  padding: 10px 10px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.25s ease;
 }
 
-.main-nav a.active {
-  border-bottom: 3px solid #0051f9;
+.main-nav ul li a.active,
+.main-nav ul li a:hover {
+  color: #0051f9;
+  border-bottom-color: #0051f9;
 }
 
 .social-links {
@@ -1843,6 +1853,7 @@ body {
   font-size: 72px;
   font-weight: 900;
   margin-bottom: 20px;
+  color: #0051F9;
 }
 
 .hero p {
@@ -1970,12 +1981,20 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.15);
   padding: 35px 30px;
   text-align: left;
+  display: flex;
+}
+
+.feature .feature-content{
+  flex: 1 0;
+  padding-left: 21px;
 }
 
 .feature img {
   background-color: #ff4100;
   padding: 1px;
   margin-bottom: 21px;
+  width: 34px;
+  height: 34px;
 }
 
 .feature h3 {
@@ -2059,6 +2078,11 @@ body {
 .program-comparison td {
   font-size: 16px;
 }
+.program-comparison table tr td:first-child{
+  font-weight: 900;
+  font-size: 20px;
+  background: rgba(0, 81, 249, 0.1);
+}
 
 .comparison {
   padding: 120px 0;
@@ -2091,6 +2115,16 @@ body {
 
 .comparison-table td {
   font-size: 14px;
+  font-weight: 500;
+}
+.comparison-table table tbody tr td:first-child {
+  background: rgba(255, 65, 0, 0.05);
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.75);
+}
+.comparison-table table tbody tr td.bold{
+  font-weight: 900;
+  color: #000000;
 }
 
 .ecosystem {
@@ -2111,8 +2145,9 @@ body {
 }
 
 .platforms {
-  display: flex;
   gap: 60px;
+  flex-direction: column;
+  display: flex;
 }
 
 .platform {
@@ -2131,15 +2166,18 @@ body {
 }
 
 .platform ul {
+  display: flex;
   list-style-type: none;
   padding: 0;
+  gap: 20px;
 }
 
 .platform li {
   background-color: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  flex:  1 0;
 }
 
 .platform h4 {
@@ -2151,4 +2189,521 @@ body {
 .platform li p {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.75);
+}
+
+.student-employability .exam-pattern {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 165px;
+    padding: 120px 0px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+.container {
+    padding: 0px 150px;
+    width: 100%;
+    margin: 0 auto;
+}
+.student-employability .frame-11 {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    position: relative;
+    flex-wrap: wrap;
+}
+.student-employability .frame-12 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+.student-employability .frame-4 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+}
+.student-employability .text-wrapper-14 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1.00px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 700;
+    color: #232323;
+    font-size: 64px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.student-employability .text-wrapper-15 {
+    position: relative;
+    align-self: stretch;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 46px;
+}
+.student-employability .text-wrapper-16 {
+    position: relative;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+.student-employability .frame-12 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+.student-employability .frame-13 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    padding: 0px;
+}
+.student-employability .frame-5 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+}
+.student-employability .frame-5 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+}
+.student-employability .text-wrapper-17 {
+    margin-top: -1.00px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 42px;
+    position: relative;
+    align-self: stretch;
+    font-family: "DM Sans", Helvetica;
+    color: #000000;
+    letter-spacing: 0;
+}
+.student-employability .frame-5 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+}
+.student-employability .frame-7 {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+.student-employability .rectangle-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0px;
+    position: relative;
+    flex: 0 0 auto;
+}
+.student-employability .rectangle {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    background-color: #ff4100;
+    border-radius: 8px;
+}
+.student-employability .div-3 {
+    position: relative;
+    flex: 1;
+    margin-top: -1.00px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 400;
+    color: #232323;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+.student-employability .span {
+    font-weight: 900;
+    color: inherit;
+}
+.student-employability .text-wrapper-9 {
+    font-weight: 500;
+    color: inherit;
+}
+.student-employability .text-wrapper-17 {
+    margin-top: -1.00px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 42px;
+    position: relative;
+    align-self: stretch;
+    font-family: "DM Sans", Helvetica;
+    color: #000000;
+    letter-spacing: 0;
+}
+
+.testimonial-wrapper .testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 120px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+}
+
+.testimonial-header {
+    margin-bottom: 40px;
+}
+.testimonial-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.testimonial-wrapper .frame-26 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+.testimonial-wrapper .testimonial-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 700;
+    color: #0051f9;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 4.80px;
+    line-height: normal;
+}
+.testimonial-wrapper .text-wrapper-28 {
+    position: relative;
+    width: fit-content;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 700;
+    color: #232323;
+    font-size: 64px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.testimonial-item {
+    display: flex;
+    flex-direction: column;
+    min-height: 428px;
+    align-items: flex-start;
+    padding: 60px;
+    background-color: #0051f90d;
+}
+.testimonial-item {
+    display: flex;
+    flex-direction: column;
+    min-height: 428px;
+    align-items: flex-start;
+    padding: 60px;
+    background-color: #0051f90d;
+}
+.testimonial-wrapper .frame-28 {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 30px;
+    flex: 1;
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+}
+.testimonial-wrapper .testimonial-item-content {
+  display: flex;
+  flex-direction: column;
+  flex:  1;
+}
+.testimonial-wrapper .testimonial-text {
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    margin-top: -1.00px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 400;
+    font-style: italic;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 32px;
+}
+.testimonial-wrapper .testimonial-item-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    flex: 0 0 auto;
+    margin-top: 30px;
+}
+.testimonial-wrapper .testimonial-item-meta .name {
+    position: relative;
+    margin-top: -1.00px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 800;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+.testimonial-wrapper .testimonial-item-meta .position {
+    position: relative;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+.testimonial-wrapper .testimonial-bg{
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../img/testimonial-bg.png');
+  background-size: cover;
+  background-position: center;
+}
+.testimonial-wrapper .testimonial-bg img{
+  width: 100%;
+  max-width: 50%;
+}
+
+.macbook-pro .footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0px 0px 50px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #0051f9;
+}
+.macbook-pro .footer .footer-35 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    flex: 0 0 auto;
+}
+.macbook-pro .footer .footer-header {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.macbook-pro .footer-36 {
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+}
+.macbook-pro .footer .logo-on-dark {
+    background-image: url(../img/group.png);
+    position: relative;
+    width: 224px;
+    height: 50.0px;
+    background-size: 100% 100%;
+}
+.macbook-pro .footer .social-icon-group {
+    display: flex;
+    gap: 24px;
+}
+.macbook-pro .footer .social-icon-group-label {
+    display: flex;
+    align-items: center;
+}
+.macbook-pro .footer .social-icon-group .footer-text-wrapper-37 {
+    position: relative;
+    width: fit-content;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.macbook-pro .footer .social-icon-list ul {
+    display: flex;
+    gap: 15px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.macbook-pro .footer .footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.macbook-pro .footer .footer-link:hover{
+  opacity: 0.75;
+  text-decoration: underline;
+}
+.macbook-pro .footer .social-icons-wrapper {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px;
+    position: relative;
+    background-color: #ffffff33;
+    border-radius: 50px;
+}
+.macbook-pro .footer-39 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    flex: 0 0 auto;
+}
+.macbook-pro .footer .footer-navbar ul {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 10px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+.footer-columns{
+  display: grid;
+  gap: 60px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.macbook-pro .footer .footer-41 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    position: relative;
+    flex: 0 0 auto;
+    width: 100%;
+}
+.macbook-pro .footer .footer-42 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+.macbook-pro .footer-text-wrapper-39 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1.00px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: left;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.macbook-pro .footer-text-wrapper-40 {
+    position: relative;
+    align-self: stretch;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 500;
+    color: #ffffffbf;
+    font-size: 16px;
+    text-align: left;
+    letter-spacing: 0;
+    line-height: 26px;
+    max-width: 965px;
+}
+.footer-contacts ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-contacts ul li a{
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.footer-contacts ul li a:hover{
+  text-decoration: underline;
+  opacity: 0.75;
+}
+.footer .copyright{
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 15px;
+}
+.footer .copyright p{
+  width: 100%;
+  max-width: unset;
+  text-align: center;
+}
+.page-fill{
+  position: absolute;
+  top: 0px;
+  height: 4px;
+  left: 0px;
+  width: 0%;
+  background-color: #ff4100;
 }
