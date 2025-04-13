@@ -15,7 +15,6 @@
 .landing-page .ecosystem {
   width: 100%;
   padding: 100px 150px;
-  background-color: #0051f9;
 }
 
 .landing-page .frame {
@@ -531,10 +530,7 @@
 }
 
 .landing-page .skilling {
-  display: flex;
-  flex-direction: column;
   width: 100%;
-  align-items: center;
   padding: 120px 150px 120px;
 }
 
@@ -853,12 +849,8 @@
 }
 
 .landing-page .program {
-  display: flex;
-  flex-direction: column;
   width: 100%;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 90px 60px 90px 100px;
+  padding: 120px 150px;
 }
 .pt-0{
   padding-top:  0px !important;
@@ -954,7 +946,6 @@
 
 .landing-page .text-wrapper-35 {
   position: relative;
-  align-self: stretch;
   font-family: "DM Sans", Helvetica;
   font-weight: 500;
   color: #000000;
@@ -1403,13 +1394,14 @@
 
 .landing-page .hero {
   display: flex;
-  flex-direction: column;
   width: 100%;
-  height: 686px;
-  align-items: flex-end;
+  min-height: 686px;
+  height: calc(100vh - 120px);
+  align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 120px 150px;
-  background-image: url('../img/hero-image.png');
+  background-image: url('../img/hero-image-2.jpg');
 }
 
 .landing-page .frame-53 {
@@ -1846,24 +1838,29 @@ body {
 }
 
 .hero-content {
-  flex: 1;
+  text-align: center;
 }
 
 .hero h1 {
   font-size: 72px;
-  font-weight: 900;
+  font-weight: 600;
   margin-bottom: 20px;
-  color: #0051F9;
+  color: #ffffff;
+  line-height: normal;
 }
 
 .hero p {
-  font-size: 42px;
-  font-weight: 600;
-  margin-bottom: 49px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  margin-bottom: 0px;
+  color: #ffffff;
+  max-width: 992px;
 }
 
 .certifications {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 20px;
 }
@@ -1904,25 +1901,24 @@ body {
   margin-bottom: 20px;
 }
 
-.bridge {
-  display: flex;
-  align-items: center;
-  padding: 120px 0;
-}
+
 .bridge img {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  width: 100%;
 }
 
 .bridge-content {
-  padding: 90px 100px;
+  padding: 80px;
+  height: 100%;
   background: rgba(0, 81, 249, 0.05);
 
 }
 
 .bridge h2 {
-  font-size: 52px;
+  font-size: 42px;
+  line-height: normal;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -1931,6 +1927,7 @@ body {
 .bridge li {
   font-size: 18px;
   margin-bottom: 10px;
+  line-height: 28px;
 }
 
 .bridge ul {
@@ -1963,8 +1960,8 @@ body {
 }
 
 .industry .section-header p {
-  font-size: 24px;
-  max-width: 995px;
+  font-size: 18px;
+  max-width: 850px;
   
 }
 
@@ -1982,6 +1979,11 @@ body {
   padding: 35px 30px;
   text-align: left;
   display: flex;
+  transition: all 0.25s ease;
+}
+.feature:hover {
+  border-color: #ff4100;
+  transform: scale(1.05);
 }
 
 .feature .feature-content{
@@ -2016,44 +2018,53 @@ body {
   font-size: 42px;
   font-weight: 700;
   margin-bottom: 45px;
+
+  text-align: center;
 }
 
 .programs {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;  
+  gap: 60px;
 }
 
 .program-item {
   flex: 1;
+  text-align: center;
 }
 
 .program-item h3 {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 700;
   color: #0051f9;
   margin-bottom: 15px;
+  line-height: normal;
 }
 
 .program-item p {
-  font-size: 20px;
+  font-size: 18px;
+  line-height: normal;
 }
 
 .skilling {
   padding: 120px 0;
-  text-align: center;
 }
 
-.skilling h2 {
+.skilling-header {
+  text-align: center;
+}
+.skilling-header h2 {
   font-size: 30px;
   font-weight: 900;
   margin-bottom: 20px;
+  line-height:  normal;
 }
 
-.skilling h3 {
+.skilling-header h3 {
   font-size: 52px;
   font-weight: 700;
   margin-bottom: 45px;
+  line-height:  normal;
 }
 
 .program-comparison table {
@@ -2064,7 +2075,7 @@ body {
 .program-comparison th,
 .program-comparison td {
   border: 1px solid rgba(0, 0, 0, 0.15);
-  padding: 20px;
+  padding: 10px;
   text-align: left;
 }
 
@@ -2072,7 +2083,40 @@ body {
   background-color: #0051f9;
   color: #ffffff;
   font-weight: 600;
+  font-size: 18px;
+}
+.program-comparison-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.program-card{
+  padding: 30px;
+  background-color: rgba(0, 81, 249, 0.1);
+}
+.program-card-full{
+  grid-row: span 2;
+}
+.program-card h4{
+  font-size: 30px;
+  font-weight: 700;
+  color: #0051f9;
+  text-align: left;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.program-card h5{
   font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.program-card ul{
+  margin-bottom: 15px;
+}
+.program-card p{
+  margin-bottom: 10px;
 }
 
 .program-comparison td {
@@ -2104,6 +2148,7 @@ body {
 .comparison-table td {
   border: 1px solid rgba(0, 0, 0, 0.15);
   padding: 10px 20px;
+  text-align: left;
 }
 
 .comparison-table th {
@@ -2128,13 +2173,13 @@ body {
 }
 
 .ecosystem {
-  background-color: #0051f9;
-  color: #ffffff;
+  background-color: rgba(0, 81, 249, 0.05); 
   padding: 100px 0;
 }
 
 .ecosystem h2 {
   font-size: 52px;
+  line-height: normal;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -2146,8 +2191,9 @@ body {
 
 .platforms {
   gap: 60px;
-  flex-direction: column;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
 }
 
 .platform {
@@ -2155,40 +2201,47 @@ body {
 }
 
 .platform h3 {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .platform > p {
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 30px;
 }
 
 .platform ul {
   display: flex;
+  flex-direction: column;
   list-style-type: none;
   padding: 0;
-  gap: 20px;
+  gap: 15px;
 }
 
 .platform li {
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 15px;
   margin-bottom: 0px;
   flex:  1 0;
 }
+.platform li:last-child {
+  border: none;
+  padding-bottom: 0px;
+}
 
 .platform h4 {
-  font-size: 16px;
+  font-size: 20px;
+  line-height: normal;
   font-weight: 700;
   margin-bottom: 10px;
+  color: #0051f9;
 }
 
 .platform li p {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.75);
 }
 
 .student-employability .exam-pattern {
@@ -2378,12 +2431,11 @@ body {
     color: #000000;
     letter-spacing: 0;
 }
-
 .testimonial-wrapper .testimonial {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px 0px 120px;
+    padding: 120px 0px 120px;
     position: relative;
     align-self: stretch;
     width: 100%;
@@ -2391,6 +2443,7 @@ body {
 
 .testimonial-header {
     margin-bottom: 40px;
+    text-align: center;
 }
 .testimonial-group {
     display: grid;
@@ -2408,7 +2461,6 @@ body {
 }
 .testimonial-wrapper .testimonial-2 {
     position: relative;
-    width: fit-content;
     margin-top: -1.00px;
     font-family: "DM Sans", Helvetica;
     font-weight: 700;
@@ -2420,7 +2472,6 @@ body {
 }
 .testimonial-wrapper .text-wrapper-28 {
     position: relative;
-    width: fit-content;
     font-family: "DM Sans", Helvetica;
     font-weight: 700;
     color: #232323;
@@ -2707,4 +2758,142 @@ body {
   left: 0px;
   width: 0%;
   background-color: #ff4100;
+}
+.contact-form{
+  padding: 120px 0px;
+}
+.contact-form-wrapper{
+  display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 100px;
+}
+.contact-form h2{
+  position: relative;
+  font-family: "DM Sans", Helvetica;
+  font-weight: 700;
+  color: #232323;
+  font-size: 52px;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-bottom: 25px;
+}
+.contact-form .form-card{
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 40px 50px;
+  width: 100%;
+  margin:  0 auto;
+  background-color: rgb(0 81 249 / 5%);
+}
+.form-field-group {
+  margin-bottom: 15px;
+}
+.form-field-group label{
+  display: block;
+  margin-bottom: 8px;
+
+}
+.form-field-control {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+
+.faqs-wrapper h2 {
+  font-size: 42px;
+  font-weight: 700;
+  max-width: 550px;
+  margin-bottom: 35px;
+}
+.faqs-wrapper .faqs-list {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    width: 100%;
+}
+.faqs-item {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+}
+.faqs-wrapper .faq-button {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #00000026;
+}
+.faqs-wrapper .faq-button h3 {
+    position: relative;
+    flex: 1;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+summary {
+    list-style: none;
+}
+
+.faqs-wrapper .plus {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+.faqs-wrapper .frame-34 {
+    align-items: flex-start;
+    padding: 15px 0px;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.faqs-wrapper .faqs-item p {
+    margin-bottom: 15px;
+    position: relative;
+    flex: 1;
+    margin-top: -1.00px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+.form-field-action{
+  margin-top: 35px;
+}
+.button{
+  min-height: 50px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  border-radius: 5px;
+  border:  none;
+  font-size: 18px;
+  font-family: "DM Sans", Helvetica;
+} 
+.button-primary{
+  background-color: #0051f9;
+  color: #fff;
+}
+.faqs-wrapper .faqs-content{
+    padding-top: 25px;
 }
